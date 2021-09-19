@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,200&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/base16/tomorrow.min.css"
+    />
+    <title>CV: Valentina Frolina</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="nav_row">
+          <div class="menu_icon">
+            <span>тут иконка меню</span>
+          </div>
+          <nav class="menu">
+            <ul class="menu_list">
+              <li>
+                <a data-goto=".about_me" href="#" class="menu_link">About me</a>
+              </li>
+              <li>
+                <a data-goto=".education" href="#" class="menu_link"
+                  >Education</a
+                >
+              </li>
+              <li>
+                <a data-goto=".skills" href="#" class="menu_link">Skills</a>
+              </li>
+              <li>
+                <a data-goto=".strengths" href="#" class="menu_link"
+                  >Strengths</a
+                >
+              </li>
+              <li>
+                <a data-goto=".languages" href="#" class="menu_link"
+                  >Languages</a
+                >
+              </li>
+              <li>
+                <a data-goto=".code" href="#" class="menu_link">Code</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <header class="header">
+        <div class="header__row">
+          <div class="column_50">
+            <img id="ava" src="images/ava.jpg" alt="foto" />
+          </div>
+          <div class="column_50">
+            <h1>Valentina Frolina</h1>
+            <p class="profession">Front-end develover</p>
+
+            <ul class="contact_list">
+              <li id="tel">+79998016103</li>
+              <li id="discord">@OValya</li>
+              <li id="email">valya.eto.ya@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="main_row">
+          <div class="main_column_100">
+            <div class="item_about_me">
+              <h2>About me</h2>
+              <p>
+                At present time I'm on maternity leave and I think this is the
+                best time to get new profession. I have little experience in web
+                development. Now I'm studying the course community Rolling
+                Scope. There is a huge amount of new information, and thanks to
+                <b> skills to focus and work hard</b>
+                I can become a great front-end developer.
+              </p>
+            </div>
+          </div>
+          <div class="column_50">
+            <div class="item_education">
+              <h2>Education</h2>
+              <p>
+                <b>Higher education:</b> Moscow state open university, Faculty
+                of informatics and radio electronics, Engineer;
+              </p>
+              <p>
+                <b>Courses:</b>
+                <a href="https://rs.school/russia/">
+                  RS School, JavaScript/Front-end </a
+                >, leaner.
+              </p>
+            </div>
+          </div>
+          <div class="column_50">
+            <div class="item_skills">
+              <h2>Skills</h2>
+              <p><b>Hard:</b> basic knowledge of HTML, CSS, JS, Git</p>
+              <p>
+                <b>Soft:</b> Responsibility, ability to focus, communication
+              </p>
+            </div>
+          </div>
+          <div class="column_50">
+            <div class="item_languages">
+              <h2>Languages</h2>
+              <p><b>Russian:</b> native</p>
+              <p><b>English:</b> Pre-Intermediate</p>
+            </div>
+          </div>
+          <div class="column_50">
+            <div class="project">
+              <h2>My project</h2>
+            </div>
+          </div>
+          <div class="main_column_100">
+            <div class="item_code">
+              <h2>Code example</h2>
+              <pre><code >
+                function deepCount(a){
+                  let lengArr = 0;
+                   for (const elem of a) {
+                     (Array.isArray(elem))?lengArr += deepCount(elem) + 1:lengArr++; 
+                   }
+                   return lengArr;
+                 }
+              </code>
+                </pre>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer_row">
+          <a href="https://rs.school/russia/">
+            <img
+              src="images/icon/rs_school_logo.svg"
+              alt="rsscholl logo"
+              width="80px"
+            />
+          </a>
+          <p>" 2021 "</p>
+          <a href="https://github.com/OValya">
+            <img src="images/icon/github.png" alt="link to my github" />
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/go.min.js"></script></script> -->
+  </body>
+</html>
