@@ -75,13 +75,15 @@ h6 {
   font-weight: 400;
 }
 /*--------------------*/
+/* Переменные */
 :root {
   --color-primary: rgb(81, 133, 133);
   --color-second: rgb(24, 41, 41);
 }
-
+/*--------------------*/
 body {
   height: 100%;
+  background-color: rgb(202, 216, 243, 0.5);
 }
 .container {
   background-image: url(images/fon.png);
@@ -90,17 +92,16 @@ body {
   min-height: 100%;
   margin: 0px auto;
   font-family: "Poppins", sans-serif;
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 0 10px var(--color-second);
+  overflow-x: auto;
 }
 
+/* Меню (к сожалению, не бургер) */
 .nav {
-  /* border: 1px solid lightgreen;*/
   background-color: var(--color-primary);
   border-bottom: 2px solid var(--color-second);
 }
 .nav_row {
-  max-width: 800px;
   margin: 0px auto;
   display: flex;
   padding: 0px 30px;
@@ -117,6 +118,31 @@ body {
   text-decoration: underline;
 }
 
+#menu_toggle {
+  opacity: 0;
+} /*
+#menu_toggle:checked ~ .menu_btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+#menu_toggle:checked ~ .menu_btn > span {
+  transform: rotate(45deg);
+}
+#menu_toggle:checked ~ .menu_btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu_toggle:checked ~ .menu_btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu_toggle:checked ~ .menu_list {
+  visibility: visible;
+  right: 0;
+}*/
+
+/* Заголовок */
 .header {
   display: flex;
   flex-direction: column;
@@ -139,6 +165,13 @@ img#ava {
   border: 10px outset var(--color-primary);
   border-radius: 50%;
 }
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-second);
+  text-align: center;
+  letter-spacing: 3px;
+}
 .contact_list {
   font-size: 16px;
 }
@@ -155,14 +188,16 @@ li#email {
   background: url(images/icon/email.png) left no-repeat;
 }
 
-.profession {
+h4 {
   font-weight: 200;
   font-style: italic;
   font-size: 18px;
   text-align: center;
-  padding: 0 0 40px 0;
+  padding: 30px 0 40px 0;
 }
+/*----------------------*/
 
+/* Основной контент */
 .main {
   flex: 1 1 auto;
 }
@@ -174,48 +209,36 @@ li#email {
   flex-wrap: wrap;
 }
 
-.main_column_100 {
+.column_100 {
   /* border: 2px solid lightgrey;*/
   flex-basis: 100%;
   align-self: center;
 }
 
-.column_50 {
+.column_33 {
   /* border: 2px solid lightgrey;*/
-  flex-basis: 50%;
+  flex-basis: 33%;
 }
 
-.column_30 {
-  /*border: 2px solid lightgrey;*/
-  flex-basis: 30%;
-}
-.column_70 {
+.column_50 {
   /* border: 2px solid lightgrey;*/
-  flex-basis: 70%;
+  flex-basis: 33%;
 }
-.item_code {
-  margin: 10px 0;
-}
-p {
+
+h3 {
   line-height: 25px;
   margin: 15px;
   color: var(--color-second);
 }
-p > a {
+.ul_section {
+  line-height: 25px;
+  margin: 15px;
   color: var(--color-second);
 }
-p > a:hover {
-  text-decoration: underline;
+.ul_section > li {
+  padding: 5px 0 0 0;
 }
 
-h1 {
-  font-size: 40px;
-  font-weight: 700;
-  color: var(--color-second);
-  text-align: center;
-
-  letter-spacing: 3px;
-}
 h2 {
   background: linear-gradient(
     to right,
@@ -231,8 +254,7 @@ h2 {
   letter-spacing: 2px;
 }
 
-.item_about_me > h2,
-.item_code > h2 {
+.column_100 > h2 {
   background: linear-gradient(
     to right,
     transparent 25%,
@@ -241,11 +263,27 @@ h2 {
   );
   text-align: center;
 }
-pre {
-  max-width: 700px;
-  margin: 10px auto;
+figure {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  flex-wrap: wrap;
+  margin: 20px auto;
 }
-
+figure > img {
+  flex-basis: 40%;
+  margin: 0 20px 0 20px;
+}
+figure > figcaption {
+  flex-basis: 50%;
+}
+pre {
+  width: 700px;
+  margin: 10px 40px;
+  white-space: pre-wrap;
+}
+/*---------------------*/
+/*---Футер---*/
 .footer {
   background-color: var(--color-primary);
 }
@@ -259,6 +297,7 @@ pre {
   color: aliceblue;
   font-size: 18px;
 }
+/*-------------*/
 
 @media (min-width: 767px) {
   .menu_list {
@@ -274,11 +313,11 @@ pre {
   .container {
     max-width: none;
   }
-  .column_50 {
+
+  .column_33 {
     flex-basis: 100%;
   }
-  .item_about_me > h2,
-  .item_code > h2,
+  .column_100 > h2,
   h2 {
     background: linear-gradient(
       to right,
@@ -287,8 +326,66 @@ pre {
     );
     text-align: left;
   }
-  .item_code {
-    
-    margin: 20px 0 20px 0;
+  pre {
+    width: 80vw;
   }
+
+  /* .menu_btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 40px;
+    width: 26px;
+    height: 26px;
+    z-index: 1;
+  }
+
+  .menu_btn > span,
+  .menu_btn > span::before,
+  .menu_btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #252525;
+    transition-duration: 0.25s;
+  }
+  .menu_btn > span::before {
+    content: "";
+    top: -8px;
+  }
+  .menu_btn > span::after {
+    content: "";
+    top: 8px;
+  }
+
+  .menu_list {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 400px;
+    margin: 0;
+    padding: 30px 0;
+    list-style: none;
+    background-color: #eceff1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.25s;
+  }
+  .menu_link {
+    color: var(--color-second);
+
+    font-size: 18px;
+  }
+
+  .menu_list > li {
+    padding: 5px;
+  }*/
+
+  /*.item_code {
+    margin: 20px 0 20px 0;
+  }*/
 }
