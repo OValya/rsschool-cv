@@ -23,33 +23,31 @@
       <div class="nav">
         <div class="nav_row">
           <div class="menu_icon">
-            <span>тут иконка меню</span>
+            <img src="images/icon/menu.png" alt="" />
           </div>
           <nav class="menu">
-            <ul class="menu_list">
+            <!-- <input id="menu_toggle" type="checkbox" />
+            <label class="menu_btn" for="menu_toggle">
+              <span></span>
+            </label>-->
+            <ul id="id_menu_list" class="menu_list">
               <li>
-                <a data-goto=".about_me" href="#" class="menu_link">About me</a>
+                <a class="menu_link" href="#aboutme">About me</a>
               </li>
               <li>
-                <a data-goto=".education" href="#" class="menu_link"
-                  >Education</a
-                >
+                <a class="menu_link" href="#education"> Education</a>
               </li>
               <li>
-                <a data-goto=".skills" href="#" class="menu_link">Skills</a>
+                <a class="menu_link" href="#skills"> Skills</a>
               </li>
               <li>
-                <a data-goto=".strengths" href="#" class="menu_link"
-                  >Strengths</a
-                >
+                <a class="menu_link" href="#languages">Languages</a>
               </li>
               <li>
-                <a data-goto=".languages" href="#" class="menu_link"
-                  >Languages</a
-                >
+                <a class="menu_link" href="#project"> Project</a>
               </li>
               <li>
-                <a data-goto=".code" href="#" class="menu_link">Code</a>
+                <a class="menu_link" href="#code">Code</a>
               </li>
             </ul>
           </nav>
@@ -62,7 +60,7 @@
           </div>
           <div class="column_50">
             <h1>Valentina Frolina</h1>
-            <p class="profession">Front-end develover</p>
+            <h4>Front-end develover</h4>
 
             <ul class="contact_list">
               <li id="tel">+79998016103</li>
@@ -74,70 +72,83 @@
       </header>
       <main class="main">
         <div class="main_row">
-          <div class="main_column_100">
-            <div class="item_about_me">
-              <h2>About me</h2>
-              <p>
-                At present time I'm on maternity leave and I think this is the
-                best time to get new profession. I have little experience in web
-                development. Now I'm studying the course community Rolling
-                Scope. There is a huge amount of new information, and thanks to
-                <b> skills to focus and work hard</b>
-                I can become a great front-end developer.
-              </p>
-            </div>
-          </div>
-          <div class="column_50">
-            <div class="item_education">
-              <h2>Education</h2>
-              <p>
+          <section class="column_100">
+            <h2 id="aboutme">About me</h2>
+            <h3>
+              At present time I'm on maternity leave and I think this is the
+              best time to get new profession. I have little experience in web
+              development. Now I'm studying the course community Rolling Scope.
+              There is a huge amount of new information, and thanks to
+              <b> skills to focus and work hard</b>
+              I can become a great front-end developer.
+            </h3>
+          </section>
+          <section class="column_33">
+            <h2 id="education">Education</h2>
+            <ul class="ul_section">
+              <li>
                 <b>Higher education:</b> Moscow state open university, Faculty
                 of informatics and radio electronics, Engineer;
-              </p>
-              <p>
+              </li>
+              <li>
                 <b>Courses:</b>
-                <a href="https://rs.school/russia/">
-                  RS School, JavaScript/Front-end </a
-                >, leaner.
-              </p>
-            </div>
-          </div>
-          <div class="column_50">
-            <div class="item_skills">
-              <h2>Skills</h2>
-              <p><b>Hard:</b> basic knowledge of HTML, CSS, JS, Git</p>
-              <p>
+                RS School, JavaScript/Front-end, leaner.
+              </li>
+            </ul>
+          </section>
+          <section class="column_33">
+            <h2 id="skills">Skills</h2>
+
+            <ul class="ul_section">
+              <li><b>Hard:</b> basic knowledge of HTML, CSS, JS, Git</li>
+              <li>
                 <b>Soft:</b> Responsibility, ability to focus, communication
-              </p>
-            </div>
-          </div>
-          <div class="column_50">
-            <div class="item_languages">
-              <h2>Languages</h2>
-              <p><b>Russian:</b> native</p>
-              <p><b>English:</b> Pre-Intermediate</p>
-            </div>
-          </div>
-          <div class="column_50">
-            <div class="project">
-              <h2>My project</h2>
-            </div>
-          </div>
-          <div class="main_column_100">
-            <div class="item_code">
-              <h2>Code example</h2>
-              <pre><code >
-                function deepCount(a){
-                  let lengArr = 0;
-                   for (const elem of a) {
-                     (Array.isArray(elem))?lengArr += deepCount(elem) + 1:lengArr++; 
-                   }
-                   return lengArr;
-                 }
+              </li>
+            </ul>
+          </section>
+          <section class="column_33">
+            <h2 id="languages">Languages</h2>
+
+            <ul class="ul_section">
+              <li><b>Russian:</b> native</li>
+              <li><b>English:</b> Pre-Intermediate</li>
+            </ul>
+          </section>
+          <section class="column_100">
+            <h2 id="project">Project</h2>
+            <figure>
+              <a href="https://ovalya.github.io/rsschool-cv/" target="_blank">
+                <img
+                  src="images/project/cv.png"
+                  alt="cv screenshot"
+                  width="300"
+              /></a>
+              <figcaption>
+                <h3><b>"My first CV"</b></h3>
+                <h3>
+                  Tasks: create CV like Web-page. Page must be adaptive, valid,
+                  using CSS. It consists foto, contact information, skills, code
+                  example and information about education.
+                </h3>
+                <h3>
+                  For solution this task I use HTML, CSS, Git, include Google
+                  Font and highlight.js
+                </h3>
+              </figcaption>
+            </figure>
+          </section>
+          <section class="column_100">
+            <h2 id="code">Code example</h2>
+            <pre><code >
+              function highAndLow(numbers){
+                let regExp = new RegExp(' ', 'g');
+                let arr = numbers.split(regExp);
+                arr.sort( (a, b) => b - a);
+                return `${arr[0]} ${arr[arr.length-1]}`;
+              }
               </code>
                 </pre>
-            </div>
-          </div>
+          </section>
         </div>
       </main>
       <footer class="footer">
@@ -146,7 +157,7 @@
             <img
               src="images/icon/rs_school_logo.svg"
               alt="rsscholl logo"
-              width="80px"
+              width="80"
             />
           </a>
           <p>" 2021 "</p>
@@ -162,6 +173,5 @@
     <script>
       hljs.initHighlightingOnLoad();
     </script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/languages/go.min.js"></script></script> -->
   </body>
 </html>
